@@ -15,7 +15,7 @@ router.get("/", (req, res) => {
       },
     ],
   })
-    .then((ProdData) => res.json(ProdData))
+    .then((ProductData) => res.json(ProductData))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
@@ -39,12 +39,12 @@ router.get("/:id", (req, res) => {
       },
     ],
   })
-    .then((ProdData) => {
-      if (!ProdData) {
+    .then((ProductData) => {
+      if (!ProductData) {
         res.status(404).json({ message: "Product does not exist" });
         return;
       }
-      res.json(ProdData);
+      res.json(ProductData);
     })
     .catch((err) => {
       console.log(err);
@@ -133,12 +133,12 @@ router.delete("/:id", (req, res) => {
       id: req.params.id,
     },
   })
-    .then((ProdData) => {
-      if (!ProdData) {
+    .then((ProductData) => {
+      if (!ProductData) {
         res.status(404).json({ message: "Product does not exist" });
         return;
       }
-      res.json(ProdData);
+      res.json(ProductData);
     })
     .catch((err) => {
       console.log(err);
